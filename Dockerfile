@@ -13,7 +13,7 @@ RUN mvn package -DskipTests
 FROM adoptopenjdk/openjdk11:alpine-jre
 
 #Copy jar to the production image from the builder image
-COPY --from=builder /app/target/restaurant-*.jar /restaurant.jar
+COPY --from=builder /app/target/restaurant-*.jar /restaurent.jar
 
 # Run the webservice whenever container starts
 CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/restaurant.jar"]
